@@ -21,13 +21,12 @@ public class ZenContactServer {
 	public static void main(String[] args) throws Exception {
 		int port = 8080;
 		String contextPath = "zencontact";
-		Server server = new org.eclipse.jetty.server.Server(port);
+		Server server = new Server(port);
         ServletContextHandler context = new ServletContextHandler(
                         ServletContextHandler.SESSIONS);
         context.setContextPath("/"+contextPath);
         server.setHandler(context);
         
-//        WebApplicationContext appContext = ConfigurationUtils.createJavaConfiguration(context.getServletContext());
         WebApplicationContext appContext = ConfigurationUtils.createXmlConfiguration(context.getServletContext());
         DispatcherServlet dispatcherServlet = new DispatcherServlet(appContext);
         context.addServlet(new ServletHolder(dispatcherServlet), "/*");

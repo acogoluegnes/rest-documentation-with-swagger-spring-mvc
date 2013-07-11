@@ -14,6 +14,10 @@ import org.springframework.web.context.support.XmlWebApplicationContext;
  *
  */
 public class ConfigurationUtils {
+	
+	public enum ConfigurationType {
+		JAVA,XML
+	}
 
 	public static WebApplicationContext createJavaConfiguration(ServletContext context) {
 		AnnotationConfigWebApplicationContext appContext = new AnnotationConfigWebApplicationContext();
