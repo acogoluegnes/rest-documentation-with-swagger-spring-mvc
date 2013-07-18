@@ -5,7 +5,7 @@ and launch the `com.zenika.ZenContactServer` class.
 
 You can also launch the server from the command line with Maven:
 
-    mvn exec:java -Dexec.mainClass="com.zenika.ZenContactServer"
+    mvn compile exec:java -Dexec.mainClass="com.zenika.ZenContactServer"
 
 Once launched, the server outputs 2 links in the console:
 * the first one redirects to the REST documentation
